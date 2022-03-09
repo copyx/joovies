@@ -4,6 +4,8 @@ import AppLoading from "expo-app-loading";
 import * as Font from "expo-font";
 import { Ionicons } from "@expo/vector-icons";
 import { Asset, useAssets } from "expo-asset";
+import Tabs from "./navigation/Tabs";
+import { NavigationContainer } from "@react-navigation/native";
 
 export default function App() {
   // 로딩 과정에서 다른 작업을 하고싶다면 아래와 같이 구성해야함.
@@ -45,5 +47,9 @@ export default function App() {
     return <AppLoading />;
   }
 
-  return <Text>We are done!</Text>;
+  return (
+    <NavigationContainer>
+      <Tabs />
+    </NavigationContainer>
+  );
 }
